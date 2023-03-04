@@ -1,7 +1,10 @@
 package main;
 
 import javafx.application.Application;
+import javafx.scene.Group;
+import javafx.scene.Scene;
 import javafx.stage.Stage;
+import javafx.stage.StageStyle;
 
 public class MainApplication extends Application {
 
@@ -16,16 +19,35 @@ public class MainApplication extends Application {
 	
 	public static int FPS = 60;
 	
+	public Stage stage;
 	
-	
-	public static void main(String[] args) {
+	public MainApplication() {
 		
 	}
 	
-	@Override
-	public void start(Stage primaryStage) throws Exception {
-		// TODO Auto-generated method stub
+	private void initialize() {
 		
+	}  
+	
+	public static void main(String[] args) {
+		launch(args);
+	}
+	
+	@Override
+	public void start(Stage stage) throws Exception {
+		this.stage = stage;
+		this.stage.setMaximized(true);
+		this.stage.initStyle(StageStyle.UNDECORATED);
+		this.stage.setTitle("PokemAX Emerald");
+		
+		this.stage.show();
+		
+		W = stage.getWidth();
+		H = stage.getHeight();
+		
+		System.out.println(W + " x " + H);
+		
+		stage.setScene(new Scene(new Group()));
 	}
 	
 }
