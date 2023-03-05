@@ -23,7 +23,7 @@ public class MainApplication extends Application {
 	public static double scaleH;
 
 	public static int FPS = 60;
-	public static double MUSIC_VOL = 0.5;
+	public static double MUSIC_VOL = 0.1;
 	public static double SFX_VOL = 0.5;
 
 	public Stage stage;

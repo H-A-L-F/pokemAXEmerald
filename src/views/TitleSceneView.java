@@ -1,9 +1,13 @@
 package views;
 
+import constants.AssetEnums;
 import constants.SoundEnums;
+import javafx.beans.binding.DoubleBinding;
+import javafx.geometry.Pos;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
+import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
 import javafx.scene.layout.BackgroundImage;
 import javafx.scene.layout.BackgroundPosition;
@@ -25,13 +29,20 @@ public class TitleSceneView extends SceneView {
 
 	public StackPane addComponents() {
 		addCustBg();
+		addCustTitle();
 		sp.getChildren().add(new Label("TEST"));
 		
 		return this.sp;
 	}
 	
+	
+	
 	private void addCustTitle() {
+		ImageView title = createImageViewBindW(AssetEnums.TITLE_TEXT, sp.widthProperty().multiply(0.3));
 		
+		sp.getChildren().add(title);
+		
+		StackPane.setAlignment(title, Pos.TOP_CENTER);
 	}
 	
 	private void addCustBg() {
