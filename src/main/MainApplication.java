@@ -2,6 +2,7 @@ package main;
 
 import constants.SceneEnums;
 import controllers.SceneController;
+import controllers.SoundController;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -20,13 +21,17 @@ public class MainApplication extends Application {
 	public static double scaleH;
 	
 	public static int FPS = 60;
+	public static double MUSIC_VOL = 0.5;
+	public static double SFX_VOL = 0.5;
 	
 	public Stage stage;
 	
-	private SceneController sController;
+	private SceneController sceneController;
+	private SoundController soundController;
 	
 	private void initialize() {
-		this.sController = new SceneController(this);
+		this.sceneController = new SceneController(this);
+		this.soundController = SoundController.getInstance();
 	}
 	
 	@Override
@@ -38,10 +43,11 @@ public class MainApplication extends Application {
 		this.stage.initStyle(StageStyle.UNDECORATED);
 		this.stage.setTitle("PokemAX Emerald");
 		
-		this.stage.show();
+		soundController.setMusicVolume(MUSIC_VOL);
+		soundController.setSoundVolume(SFX_VOL);
 		
 		this.stage.setResizable(false);
-		this.stage.setScene(sController.makeScene(SceneEnums.TITLE_SCENE));
+		this.stage.setScene(sceneController.makeScene(SceneEnums.TITLE_SCENE));
 		this.stage.sizeToScene();
 		
 		W = stage.getWidth();
