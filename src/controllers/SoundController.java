@@ -60,21 +60,21 @@ public class SoundController {
 		return a;
 	}
 	
-	public void playSfx(int id) {
-		this.sfxs.get(id).play();
+	public void playSfx(SoundEnums s) {
+		this.sfxs.get(s.getIdx()).play();
 	}
 	
-	public void playMusic(int id) {
-		this.musics.get(id).play();
-		this.musics.get(id).setCycleCount(MediaPlayer.INDEFINITE);
+	public void playMusic(SoundEnums s) {
+		this.musics.get(s.getIdx()).play();
+		this.musics.get(s.getIdx()).setCycleCount(MediaPlayer.INDEFINITE);
 	}
 	
-	public void pauseMusic(int id) {
-		this.musics.get(id).pause();
+	public void pauseMusic(SoundEnums s) {
+		this.musics.get(s.getIdx()).pause();
 	}
 	
-	public void stopMusic(int id) {
-		this.musics.get(id).stop();
+	public void stopMusic(SoundEnums s) {
+		this.musics.get(s.getIdx()).stop();
 	}
 	
 	public void setMusicVolume(double vol) {
