@@ -1,5 +1,7 @@
 package main;
 
+import constants.SceneEnums;
+import controllers.SceneController;
 import javafx.application.Application;
 import javafx.scene.Group;
 import javafx.scene.Scene;
@@ -21,20 +23,16 @@ public class MainApplication extends Application {
 	
 	public Stage stage;
 	
-	public MainApplication() {
-		
-	}
+	private SceneController sController;
 	
 	private void initialize() {
-		
-	}  
-	
-	public static void main(String[] args) {
-		launch(args);
+		this.sController = new SceneController(this);
 	}
 	
 	@Override
 	public void start(Stage stage) throws Exception {
+		initialize();
+		
 		this.stage = stage;
 		this.stage.setMaximized(true);
 		this.stage.initStyle(StageStyle.UNDECORATED);
@@ -42,12 +40,16 @@ public class MainApplication extends Application {
 		
 		this.stage.show();
 		
+		this.stage.setResizable(false);
+		this.stage.setScene(sController.makeScene(SceneEnums.TITLE_SCENE));
+		this.stage.sizeToScene();
+		
 		W = stage.getWidth();
 		H = stage.getHeight();
 		
 		System.out.println(W + " x " + H);
 		
-		stage.setScene(new Scene(new Group()));
+		this.stage.show();
 	}
 	
 }
