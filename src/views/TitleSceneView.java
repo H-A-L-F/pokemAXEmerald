@@ -17,6 +17,8 @@ import javafx.scene.layout.StackPane;
 
 public class TitleSceneView extends SceneView {
 	
+	private final double TITLE_SCALE = 0.3;
+	
 	@Override
 	public void onStart() {
 		sc.playMusic(SoundEnums.TITLE_THEME);
@@ -30,15 +32,11 @@ public class TitleSceneView extends SceneView {
 	public StackPane addComponents() {
 		addCustBg();
 		addCustTitle();
-		sp.getChildren().add(new Label("TEST"));
-		
 		return this.sp;
 	}
 	
-	
-	
 	private void addCustTitle() {
-		ImageView title = createImageViewBindW(AssetEnums.TITLE_TEXT, sp.widthProperty().multiply(0.3));
+		ImageView title = createImageViewBindW(AssetEnums.TITLE_TEXT, sp.widthProperty().multiply(TITLE_SCALE));
 		
 		sp.getChildren().add(title);
 		
