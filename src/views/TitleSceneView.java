@@ -1,5 +1,6 @@
 package views;
 
+import constants.SoundEnums;
 import javafx.scene.Scene;
 import javafx.scene.control.Label;
 import javafx.scene.image.Image;
@@ -14,12 +15,23 @@ public class TitleSceneView extends SceneView {
 	
 	@Override
 	public void onStart() {
-		
+		sc.playMusic(SoundEnums.TITLE_THEME);
 	}
 
 	@Override
 	public void initComponents() {
 		this.sp = new StackPane();
+	}
+
+	public StackPane addComponents() {
+		addCustBg();
+		sp.getChildren().add(new Label("TEST"));
+		
+		return this.sp;
+	}
+	
+	private void addCustTitle() {
+		
 	}
 	
 	private void addCustBg() {
@@ -27,14 +39,6 @@ public class TitleSceneView extends SceneView {
 		BackgroundSize bgSize = new BackgroundSize(BackgroundSize.AUTO, BackgroundSize.AUTO, false, false, false, true);
 		BackgroundImage backgroundImage = new BackgroundImage(image, BackgroundRepeat.NO_REPEAT, BackgroundRepeat.NO_REPEAT, BackgroundPosition.CENTER, bgSize);
 		sp.setBackground(new Background(backgroundImage));
-	}
-
-	@Override
-	public StackPane addComponents() {
-		addCustBg();
-		sp.getChildren().add(new Label("TEST"));
-		
-		return this.sp;
 	}
 
 	@Override

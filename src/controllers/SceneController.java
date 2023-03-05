@@ -29,6 +29,7 @@ public class SceneController {
 		SceneView scene = scenes.get(s);
 		
 		scene.generateScene(app);
+		scene.onStart();
 		
 		return scene.getScene();
 	}
