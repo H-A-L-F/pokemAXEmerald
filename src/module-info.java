@@ -10,4 +10,5 @@ module pokemAXEmerald {
 	requires javafx.graphics;
 	requires javafx.media;
 	requires java.desktop;
+	requires javafx.controls;
 }

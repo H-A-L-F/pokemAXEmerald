@@ -20,6 +20,10 @@ public abstract class SceneView {
 	
 	public abstract Scene initScene();
 	
+	public void onStart() {
+		
+	}
+	
 	public void generateScene(MainApplication app) {
 		this.sc = SoundController.getInstance();
 		this.app = app;
