@@ -5,8 +5,6 @@ import controllers.SceneController;
 import controllers.SoundController;
 import javafx.application.Application;
 import javafx.geometry.Rectangle2D;
-import javafx.scene.Group;
-import javafx.scene.Scene;
 import javafx.stage.Screen;
 import javafx.stage.Stage;
 import javafx.stage.StageStyle;
@@ -23,7 +21,7 @@ public class MainApplication extends Application {
 	public static double scaleH;
 
 	public static int FPS = 60;
-	public static double MUSIC_VOL = 0.1;
+	public static double MUSIC_VOL = 0.5;
 	public static double SFX_VOL = 0.5;
 
 	public Stage stage;

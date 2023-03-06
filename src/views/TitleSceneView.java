@@ -2,10 +2,9 @@ package views;
 
 import constants.AssetEnums;
 import constants.SoundEnums;
-import javafx.beans.binding.DoubleBinding;
+import javafx.geometry.Insets;
 import javafx.geometry.Pos;
 import javafx.scene.Scene;
-import javafx.scene.control.Label;
 import javafx.scene.image.Image;
 import javafx.scene.image.ImageView;
 import javafx.scene.layout.Background;
@@ -18,10 +17,13 @@ import javafx.scene.layout.StackPane;
 public class TitleSceneView extends SceneView {
 	
 	private final double TITLE_SCALE = 0.3;
+	private final double TITLE_TOP_SPACE = 0.2;
 	
 	@Override
 	public void onStart() {
 		sc.playMusic(SoundEnums.TITLE_THEME);
+		
+		addCustTitle();
 	}
 
 	@Override
@@ -31,7 +33,7 @@ public class TitleSceneView extends SceneView {
 
 	public StackPane addComponents() {
 		addCustBg();
-		addCustTitle();
+		
 		return this.sp;
 	}
 	
@@ -41,6 +43,7 @@ public class TitleSceneView extends SceneView {
 		sp.getChildren().add(title);
 		
 		StackPane.setAlignment(title, Pos.TOP_CENTER);
+		StackPane.setMargin(title, new Insets(sp.heightProperty().doubleValue() * TITLE_TOP_SPACE ,0,0,0));
 	}
 	
 	private void addCustBg() {
