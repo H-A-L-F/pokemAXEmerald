@@ -13,6 +13,7 @@ import javafx.scene.layout.BackgroundPosition;
 import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.StackPane;
+import javafx.scene.text.Text;
 
 public class TitleSceneView extends SceneView {
 	
@@ -35,6 +36,10 @@ public class TitleSceneView extends SceneView {
 		addCustBg();
 		
 		return this.sp;
+	}
+	
+	private void addCustText() {
+		Text text = new Text("PRESS ENTER");
 	}
 	
 	private void addCustTitle() {
