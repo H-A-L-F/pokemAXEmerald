@@ -15,11 +15,12 @@ import javafx.scene.layout.BackgroundRepeat;
 import javafx.scene.layout.BackgroundSize;
 import javafx.scene.layout.StackPane;
 import javafx.scene.text.Text;
+import main.MainApplication;
 
 public class TitleSceneView extends SceneView {
 	
 	private final double TITLE_SCALE = 0.3;
-	private final double TITLE_TOP_SPACE = 0.2;
+	private final double TITLE_TOP_SPACE = 0.08;
 	
 	@Override
 	public void onStart() {
@@ -54,7 +55,7 @@ public class TitleSceneView extends SceneView {
 		sp.getChildren().add(title);
 		
 		StackPane.setAlignment(title, Pos.TOP_CENTER);
-		StackPane.setMargin(title, new Insets(sp.heightProperty().doubleValue() * TITLE_TOP_SPACE ,0,0,0));
+		StackPane.setMargin(title, new Insets(MainApplication.H * TITLE_TOP_SPACE ,0,0,0));
 	}
 	
 	private void addCustBg() {
