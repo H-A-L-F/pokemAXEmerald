@@ -1,6 +1,7 @@
 package views;
 
 import constants.AssetEnums;
+import constants.FontEnums;
 import constants.SoundEnums;
 import javafx.geometry.Insets;
 import javafx.geometry.Pos;
@@ -23,8 +24,6 @@ public class TitleSceneView extends SceneView {
 	@Override
 	public void onStart() {
 		sc.playMusic(SoundEnums.TITLE_THEME);
-		
-		addCustTitle();
 	}
 
 	@Override
@@ -34,12 +33,19 @@ public class TitleSceneView extends SceneView {
 
 	public StackPane addComponents() {
 		addCustBg();
+		addCustTitle();
+		addCustText();
 		
 		return this.sp;
 	}
 	
 	private void addCustText() {
 		Text text = new Text("PRESS ENTER");
+		text.setFont(FontEnums.RBYGSC.getFont());
+		
+		sp.getChildren().add(text);
+		
+		StackPane.setAlignment(text, Pos.CENTER);
 	}
 	
 	private void addCustTitle() {
